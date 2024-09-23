@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create File</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-zinc-100">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-zinc-900 rounded-lg shadow-lg p-8 w-full max-w-md">
+            <h2 class="text-3xl font-semibold mb-6 text-center">Create Your File</h2>
+
+            <a href="/" class="inline-block mb-4 text-blue-400 hover:text-blue-600 transition duration-300">
+                &#8592; Go to home page
+            </a>
+
+            <form action="/create" method="post" class="space-y-6">
+                <div>
+                    <label for="fileName" class="block text-sm font-medium mb-1">File Name</label>
+                    <input type="text" id="fileName" name="fileName" class="w-full p-3 rounded bg-zinc-800 border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter file name">
+                </div>
+                
+                <div>
+                    <label for="data" class="block text-sm font-medium mb-1">File Content</label>
+                    <textarea id="data" name="data" rows="5" class="w-full p-3 rounded bg-zinc-800 border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Write something..."></textarea>
+                </div>
+
+                <div>
+                    <input type="submit" value="Create File" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md transition duration-300 cursor-pointer">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

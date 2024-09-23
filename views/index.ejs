@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-zinc-100 min-h-screen p-6">
+  
+    <div class="mb-12">  
+        <h1 class="text-4xl font-bold mb-10 mt-10 text-left">Welcome to the Home Page</h1>
+        <a href="/create" class="text-blue-400 hover:text-blue-600 transition duration-300 text-lg text-left block">
+            &#8594; Create File
+        </a>
+    </div>
+ 
+    <% if (files.length > 0) { %>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"> 
+            <% files.forEach(function(name){ %>
+                <div class="flex flex-col justify-between items-center bg-zinc-800 rounded-xl shadow-lg h-48 w-48 p-4 hover:bg-zinc-700 transition duration-300">
+                   <a href="/show/<%= name%>"> <h3 class=" text-2xl font-bold mt-5 truncate "><%= name %></h3> </a>
+
+                    <div class="mt-auto flex justify-between w-full text-lg pt-4 border-t border-zinc-600">  
+                        <a href="/edit/<%= name %>" class="text-blue-400 hover:text-blue-600 transition duration-300">Edit</a>
+                        <a href="/delete/<%= name %>" class="text-red-400 hover:text-red-600 transition duration-300">Delete</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <p class="text-lg">No files available.</p>
+    <% } %>
+
+    
+</body>
+</html>

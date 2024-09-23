@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit File</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-gray-100">
+    <div class="container mx-auto p-8">
+        <h2 class="text-3xl font-bold mb-4">Edit Your File</h2>
+        <a href="/" class="text-lg text-blue-400 hover:text-blue-600 transition duration-300">Go to Home Page</a>
+        
+        <form action="/edit/<%= file %>" method="post" class="mt-6 bg-zinc-800 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+                <label class="block text-lg mb-2">File Name</label>
+                <input type="text" name="fileName" value="<%= file %>" class="w-full p-3 rounded bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-4">
+                <label class="block text-lg mb-2">Content</label>
+                <input type="text" name="data" value="<%= data %>" class="w-full p-3 rounded bg-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <input type="submit" value="Update File" class="w-full p-3 bg-blue-500 text-gray-100 rounded-lg hover:bg-blue-600 transition duration-300 cursor-pointer">
+        </form>
+    </div>
+</body>
+</html>
